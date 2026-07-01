@@ -1,22 +1,18 @@
 ═══════════════════════════════════════
 
-            Дмитрий
-
+              Дмитрий
       Портфолио системного аналитика
 
 ═══════════════════════════════════════
 
-Анализ требований • BPMN • UML
-REST API • SQL • ERD
-
 Москва
-Open to Work
+Открыт к предложениям
+
+Анализ требований • BPMN • UML • REST API • SQL • ERD
 
 ═══════════════════════════════════════
 
 **Русский** | [English](README.en.md)
-
-> Requirements Engineering • Business Analysis • BPMN • UML • ERD • API • SQL • System Design
 
 ## Обо мне
 
