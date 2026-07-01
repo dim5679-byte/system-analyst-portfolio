@@ -1,89 +1,91 @@
-# Dmitriy
+# Дмитрий
 
-## System Analyst Portfolio
+## Портфолио системного аналитика
 
-> Requirements Engineering • Business Analysis • API Design • BPMN • UML • ERD • SQL
+**Русский** | [English](README.en.md)
 
----
-
-Professional portfolio demonstrating practical skills in system analysis, business process modeling, API design, data modeling and technical documentation.
+> Requirements Engineering • Business Analysis • BPMN • UML • ERD • API • SQL • System Design
 
 ---
 
-## About
-
-I am a System Analyst focused on requirements engineering, business process modeling, API design and structured documentation for development teams.
-
-This portfolio contains selected projects, artifacts and documentation that demonstrate my approach to analysis, system design and solution documentation.
+Профессиональное портфолио системного аналитика: проекты, артефакты, требования, диаграммы, API, модели данных и проектная документация.
 
 ---
 
-## Core Competencies
+## Обо мне
 
-| Area | Skills |
+Я системный аналитик, который работает с требованиями, бизнес-процессами, API, моделями данных и технической документацией для команд разработки.
+
+Это портфолио показывает не только готовые артефакты, но и подход к структурированию информации, проектированию решений и оформлению документации.
+
+---
+
+## Ключевые компетенции
+
+| Направление | Навыки |
 |---|---|
-| Requirements | User Story, Use Case, Functional Requirements, Non-Functional Requirements |
-| Business Analysis | Process Analysis, Stakeholder Needs, Business Rules |
-| Modeling | BPMN, UML, DFD, ERD |
-| API Design | REST API, OpenAPI, Swagger |
-| Data | SQL, Data Modeling, Database Structure |
-| Documentation | Technical Specifications, Project Documentation, Diagrams |
+| Требования | User Story, Use Case, функциональные и нефункциональные требования |
+| Бизнес-анализ | анализ процессов, бизнес-правила, работа со стейкхолдерами |
+| Моделирование | BPMN, UML, DFD, ERD |
+| API | REST API, OpenAPI, Swagger |
+| Данные | SQL, проектирование структуры БД, ERD |
+| Документация | ТЗ, спецификации, диаграммы, проектная документация |
 
 ---
 
-## Featured Projects
+## Лучшие проекты
 
-| Project | Description | Artifacts |
+| Проект | Описание | Артефакты |
 |---|---|---|
-| [Smart Home](projects/smart-home) | Smart home management platform | Requirements, BPMN, API, ERD, SQL |
-| [Clinic Vita](projects/clinic-vita) | Medical information system | BPMN, UML, Requirements, Wireframes |
-| [Internet Shop](projects/internet-shop) | E-commerce system | ERD, BPMN, SQL, API |
-| [Capsule Hotel](projects/capsule-hotel) | Capsule hotel management system | Test Plan, User Guide, Requirements |
-| [Pet Insurance API](projects/pet-insurance) | API for pet insurance services | OpenAPI, REST, JSON |
+| [Smart Home](projects/smart-home) | система управления умным домом | Requirements, BPMN, API, ERD, SQL |
+| [Clinic Vita](projects/clinic-vita) | медицинская информационная система | BPMN, UML, Requirements, Wireframes |
+| [Internet Shop](projects/internet-shop) | система интернет-магазина | ERD, BPMN, SQL, API |
+| [Capsule Hotel](projects/capsule-hotel) | система управления капсульным отелем | Test Plan, User Guide, Requirements |
+| [Pet Insurance API](projects/pet-insurance) | API для сервиса страхования питомцев | OpenAPI, REST, JSON |
 
 ---
 
-## Artifact Library
+## Библиотека артефактов
 
-| Section | Description |
+| Раздел | Описание |
 |---|---|
-| [Requirements](artifacts/requirements) | User Stories, Use Cases, functional and non-functional requirements |
-| [BPMN](artifacts/bpmn) | Business process models |
-| [UML](artifacts/uml) | Sequence diagrams, state machines and other UML diagrams |
-| [ERD](artifacts/erd) | Data models and entity relationships |
-| [API](artifacts/api) | REST API and OpenAPI specifications |
-| [Architecture](artifacts/architecture) | C4, component diagrams and system design artifacts |
-| [SQL](artifacts/sql) | SQL queries and database examples |
-| [Wireframes](artifacts/wireframes) | Interface prototypes and screen layouts |
+| [Requirements](artifacts/requirements) | требования, User Story, Use Case |
+| [BPMN](artifacts/bpmn) | модели бизнес-процессов |
+| [UML](artifacts/uml) | Sequence Diagram, State Machine и другие UML-диаграммы |
+| [ERD](artifacts/erd) | модели данных и связи сущностей |
+| [API](artifacts/api) | REST API и OpenAPI-спецификации |
+| [Architecture](artifacts/architecture) | C4, компонентные диаграммы, архитектурные решения |
+| [SQL](artifacts/sql) | SQL-запросы и примеры работы с данными |
+| [Wireframes](artifacts/wireframes) | прототипы интерфейсов и схемы экранов |
 
 ---
 
-## How This Portfolio Was Built
+## Как создавалось портфолио
 
-This portfolio is managed as a separate project with its own documentation, roadmap and design principles.
+Это портфолио ведется как отдельный проект: с целью, дорожной картой, принципами оформления и историей изменений.
 
-| Document | Purpose |
+| Документ | Назначение |
 |---|---|
-| [Vision](docs/vision.md) | Purpose and target audience |
-| [Roadmap](docs/roadmap.md) | Development stages |
-| [Portfolio Plan](docs/portfolio-plan.md) | Portfolio structure and content plan |
-| [Design Principles](docs/design-principles.md) | Documentation and structure rules |
-| [UI Guidelines](docs/ui-guidelines.md) | Visual and formatting rules |
-| [Changelog](docs/changelog.md) | Version history |
+| [Vision](docs/vision.md) | цель и аудитория портфолио |
+| [Roadmap](docs/roadmap.md) | этапы развития |
+| [Portfolio Plan](docs/portfolio-plan.md) | структура и план наполнения |
+| [Design Principles](docs/design-principles.md) | правила структуры и документации |
+| [UI Guidelines](docs/ui-guidelines.md) | правила оформления |
+| [Changelog](docs/changelog.md) | история изменений |
 
 ---
 
-## Resume
+## Резюме
 
-Resume will be added later.
+Резюме будет добавлено позже.
 
 ---
 
-## Contacts
+## Контакты
 
-| Channel | Link |
+| Канал | Ссылка |
 |---|---|
 | GitHub | [dim5679-byte](https://github.com/dim5679-byte) |
-| Telegram | To be added |
-| Email | To be added |
-| HH Resume | To be added |
+| Telegram | будет добавлено позже |
+| Email | будет добавлено позже |
+| HH | будет добавлено позже |
