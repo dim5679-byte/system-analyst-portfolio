@@ -131,3 +131,9 @@
 - голосового управления;
 - управления расписанием;
 - интеграции с внешними сервисами.
+
+## Связанные документы
+
+- [Scope](../04-scope/README.md)
+- [Non-functional Requirements](../06-non-functional-requirements/README.md)
+- [User Stories](../07-user-stories/README.md)

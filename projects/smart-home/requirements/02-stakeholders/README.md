@@ -79,3 +79,9 @@
 ## Вывод
 
 Определение заинтересованных сторон позволяет учитывать интересы всех участников проекта при формировании требований и планировании последующих релизов.
+
+## Связанные документы
+
+- [Vision](../01-vision/README.md)
+- [Business Goals](../03-business-goals/README.md)
+- [Functional Requirements](../05-functional-requirements/README.md)

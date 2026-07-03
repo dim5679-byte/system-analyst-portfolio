@@ -136,3 +136,7 @@
 - локализации;
 - доступности (Accessibility);
 - производительности серверной части.
+
+## Связанные документы
+
+- [Functional Requirements](../05-functional-requirements/README.md)
