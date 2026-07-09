@@ -12,9 +12,9 @@
 
 | Диаграмма | Статус | Ссылка | Связанные документы |
 |---|---|---|---|
-| User Registration | В работе | [Открыть](./01-user-registration/README.md) | Use Cases, Functional Requirements |
-| Add Device | В работе | [Открыть](./02-add-device/README.md) | Use Cases, Functional Requirements, Business Rules |
-| Device Control | В работе | [Открыть](./03-device-control/README.md) | Use Cases, Functional Requirements, Business Rules |
+| User Registration | В работе | [Открыть](./01-user-registration/README.md) | Functional Requirements, User Stories, Use Cases |
+| Add Device | В работе | [Открыть](./02-add-device/README.md) | Functional Requirements, User Stories, Use Cases, Business Rules |
+| Device Control | В работе | [Открыть](./03-device-control/README.md) | Functional Requirements, User Stories, Use Cases, Business Rules |
 
 ---
 
@@ -22,12 +22,9 @@
 
 Планируется моделирование процессов:
 
-- регистрация пользователя;
 - авторизация;
 - создание дома;
 - создание комнаты;
-- подключение устройства;
-- управление устройством;
 - удаление устройства.
 
 ---
