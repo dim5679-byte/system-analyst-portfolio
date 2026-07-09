@@ -16,7 +16,7 @@
 
 - Пользователь
 - Мобильное приложение
-- Backend API
+- Smart Home Backend
 
 ---
 
@@ -29,7 +29,7 @@
 
 ## Результат
 
-Созданная учетная запись пользователя.
+Создана учетная запись пользователя, и пользователь может продолжить работу с системой.
 
 ---
 
@@ -39,11 +39,24 @@
 
 ---
 
-## Планируемые артефакты
+## Артефакты
 
-- BPMN Diagram (.bpmn)
+- BPMN Diagram (.drawio)
 - PNG Preview
-- Краткое описание процесса
+- README.md
+
+---
+
+## Диаграмма процесса
+
+![User Registration BPMN](./smart-home_bpmn_user-registration.png)
+
+---
+
+## Файлы
+
+- [BPMN Diagram](./smart-home_bpmn_user-registration.drawio)
+- [PNG Preview](./smart-home_bpmn_user-registration.png)
 
 ---
 
