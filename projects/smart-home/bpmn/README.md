@@ -10,11 +10,11 @@
 
 ## Диаграммы
 
-| Диаграмма | Статус | Связанные документы |
-|-----------|--------|---------------------|
-| Регистрация пользователя | Планируется | Use Cases |
-| Подключение устройства | Планируется | Use Cases |
-| Управление устройством | Планируется | Use Cases |
+| Диаграмма | Статус | Ссылка | Связанные документы |
+|---|---|---|---|
+| User Registration | В работе | [Открыть](./01-user-registration/README.md) | Use Cases, Functional Requirements |
+| Add Device | В работе | [Открыть](./02-add-device/README.md) | Use Cases, Functional Requirements, Business Rules |
+| Device Control | В работе | [Открыть](./03-device-control/README.md) | Use Cases, Functional Requirements, Business Rules |
 
 ---
 
@@ -34,6 +34,6 @@
 
 ## Связанные документы
 
-- Requirements
-- Use Cases
-- UML
+- [Requirements](../requirements/README.md)
+- [Use Cases](../requirements/08-use-cases/README.md)
+- [UML](../uml/README.md)
