@@ -1,4 +1,4 @@
-# ERD
+Define the purpose, scope, initial entities, and planned artifacts for the Smart Home data model.# ERD
 
 ## Назначение раздела
 
