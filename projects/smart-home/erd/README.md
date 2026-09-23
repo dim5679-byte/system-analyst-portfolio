@@ -1,4 +1,3 @@
-Define the purpose, scope, initial entities, and planned artifacts for the Smart Home data model.# ERD
 
 ## Назначение раздела
 
@@ -37,22 +36,27 @@ ERD описывает основные сущности системы, их а
 
 ---
 
-## Планируемые артефакты
+## Артефакты
 
 - логическая ERD в формате Draw.io;
 - PNG-предпросмотр модели;
 - описание сущностей и связей;
 - первичные и внешние ключи;
 - SQL-схема PostgreSQL.
-
----
-
+  
 ## Статус
 
 В работе
 
----
+## Диаграмма
 
+![Smart Home ERD](./smart-home_erd_v1.png)
+
+## Файлы
+
+- [ERD Diagram](./smart-home_erd_v1.drawio)
+- [PNG Preview](./smart-home_erd_v1.png)
+  
 ## Связанные документы
 
 - [Functional Requirements](../requirements/05-functional-requirements/README.md)
