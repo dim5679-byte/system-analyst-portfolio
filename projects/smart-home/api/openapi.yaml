@@ -19,6 +19,9 @@ tags:
   - name: Rooms
     description: Room management
 
+  - name: Devices
+    description: Device management
+
 paths:
 
   /auth/register:
@@ -382,6 +385,207 @@ paths:
         '404':
           description: Room not found
 
+  /homes/{homeId}/devices:
+    parameters:
+      - name: homeId
+        in: path
+        required: true
+        description: Home identifier
+        schema:
+          type: string
+          format: uuid
+
+    get:
+      tags:
+        - Devices
+      summary: Get devices of a home
+      operationId: getHomeDevices
+      security:
+        - bearerAuth: []
+
+      responses:
+        '200':
+          description: List of devices
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Device'
+
+        '401':
+          description: Authentication required
+
+        '403':
+          description: Access denied
+
+        '404':
+          description: Home not found
+
+    post:
+      tags:
+        - Devices
+      summary: Add device to home
+      operationId: addDevice
+      security:
+        - bearerAuth: []
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddDeviceRequest'
+
+      responses:
+        '201':
+          description: Device added successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Device'
+
+        '400':
+          description: Invalid QR code or request
+
+        '401':
+          description: Authentication required
+
+        '403':
+          description: Access denied
+
+        '404':
+          description: Home not found
+
+        '409':
+          description: Device is already connected
+
+  /devices/{deviceId}:
+    parameters:
+      - name: deviceId
+        in: path
+        required: true
+        description: Device identifier
+        schema:
+          type: string
+          format: uuid
+
+    get:
+      tags:
+        - Devices
+      summary: Get device by ID
+      operationId: getDevice
+      security:
+        - bearerAuth: []
+
+      responses:
+        '200':
+          description: Device information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Device'
+
+        '401':
+          description: Authentication required
+
+        '403':
+          description: Access denied
+
+        '404':
+          description: Device not found
+
+    patch:
+      tags:
+        - Devices
+      summary: Update device
+      operationId: updateDevice
+      security:
+        - bearerAuth: []
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateDeviceRequest'
+
+      responses:
+        '200':
+          description: Device updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Device'
+
+        '400':
+          description: Invalid request
+
+        '401':
+          description: Authentication required
+
+        '403':
+          description: Access denied
+
+        '404':
+          description: Device not found
+
+    delete:
+      tags:
+        - Devices
+      summary: Remove device
+      operationId: removeDevice
+      security:
+        - bearerAuth: []
+
+      responses:
+        '204':
+          description: Device removed successfully
+
+        '401':
+          description: Authentication required
+
+        '403':
+          description: Access denied
+
+        '404':
+          description: Device not found
+
+  /devices/{deviceId}/state:
+    parameters:
+      - name: deviceId
+        in: path
+        required: true
+        description: Device identifier
+        schema:
+          type: string
+          format: uuid
+
+    get:
+      tags:
+        - Devices
+      summary: Get current device state
+      operationId: getDeviceState
+      security:
+        - bearerAuth: []
+
+      responses:
+        '200':
+          description: Current device state
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeviceState'
+
+        '401':
+          description: Authentication required
+
+        '403':
+          description: Access denied
+
+        '404':
+          description: Device not found
+
 components:
 
   securitySchemes:
@@ -574,3 +778,128 @@ components:
           minLength: 1
           maxLength: 100
           example: Bedroom
+
+    Device:
+      type: object
+      required:
+        - id
+        - homeId
+        - deviceTypeId
+        - name
+        - serialNumber
+        - connectionStatus
+        - createdAt
+        - updatedAt
+      properties:
+        id:
+          type: string
+          format: uuid
+          example: a2c9db02-4f45-4da8-9fd5-d97d01f50aa5
+
+        homeId:
+          type: string
+          format: uuid
+          example: 550e8400-e29b-41d4-a716-446655440000
+
+        roomId:
+          type: string
+          format: uuid
+          nullable: true
+          example: 51e74da1-0fc4-47a6-8986-94a06f1ec5b4
+
+        deviceTypeId:
+          type: string
+          format: uuid
+          example: f7153dfa-86c7-42f2-a2a8-cd10de20249f
+
+        name:
+          type: string
+          maxLength: 100
+          example: Living Room Lamp
+
+        serialNumber:
+          type: string
+          maxLength: 100
+          example: LAMP-001-ABCD
+
+        connectionStatus:
+          type: string
+          enum:
+            - online
+            - offline
+            - error
+          example: online
+
+        createdAt:
+          type: string
+          format: date-time
+          example: 2026-09-25T12:00:00Z
+
+        updatedAt:
+          type: string
+          format: date-time
+          example: 2026-09-25T12:00:00Z
+
+    AddDeviceRequest:
+      type: object
+      additionalProperties: false
+      required:
+        - qrCode
+      properties:
+        qrCode:
+          type: string
+          minLength: 1
+          example: SMART-HOME:LAMP-001-ABCD
+
+        roomId:
+          type: string
+          format: uuid
+          nullable: true
+          example: 51e74da1-0fc4-47a6-8986-94a06f1ec5b4
+
+        name:
+          type: string
+          minLength: 1
+          maxLength: 100
+          example: Living Room Lamp
+
+    UpdateDeviceRequest:
+      type: object
+      additionalProperties: false
+      minProperties: 1
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 100
+          example: Main Lamp
+
+        roomId:
+          type: string
+          format: uuid
+          nullable: true
+          example: 51e74da1-0fc4-47a6-8986-94a06f1ec5b4
+
+    DeviceState:
+      type: object
+      required:
+        - deviceId
+        - state
+        - updatedAt
+      properties:
+        deviceId:
+          type: string
+          format: uuid
+          example: a2c9db02-4f45-4da8-9fd5-d97d01f50aa5
+
+        state:
+          type: object
+          additionalProperties: true
+          example:
+            power: true
+            brightness: 70
+
+        updatedAt:
+          type: string
+          format: date-time
+          example: 2026-09-25T12:05:00Z
