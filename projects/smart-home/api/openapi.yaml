@@ -22,6 +22,9 @@ tags:
   - name: Devices
     description: Device management
 
+  - name: Commands
+    description: Device command management
+
 paths:
 
   /auth/register:
@@ -586,6 +589,116 @@ paths:
         '404':
           description: Device not found
 
+  /devices/{deviceId}/commands:
+    parameters:
+      - name: deviceId
+        in: path
+        required: true
+        description: Device identifier
+        schema:
+          type: string
+          format: uuid
+
+    post:
+      tags:
+        - Commands
+      summary: Send command to device
+      operationId: sendDeviceCommand
+      security:
+        - bearerAuth: []
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateCommandRequest'
+
+      responses:
+        '202':
+          description: Command accepted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Command'
+
+        '400':
+          description: Invalid command
+
+        '401':
+          description: Authentication required
+
+        '403':
+          description: Access denied
+
+        '404':
+          description: Device not found
+
+        '409':
+          description: Device is unavailable
+
+    get:
+      tags:
+        - Commands
+      summary: Get device command history
+      operationId: getDeviceCommands
+      security:
+        - bearerAuth: []
+
+      responses:
+        '200':
+          description: Device command history
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Command'
+
+        '401':
+          description: Authentication required
+
+        '403':
+          description: Access denied
+
+        '404':
+          description: Device not found
+
+  /commands/{commandId}:
+    parameters:
+      - name: commandId
+        in: path
+        required: true
+        description: Command identifier
+        schema:
+          type: string
+          format: uuid
+
+    get:
+      tags:
+        - Commands
+      summary: Get command by ID
+      operationId: getCommand
+      security:
+        - bearerAuth: []
+
+      responses:
+        '200':
+          description: Command information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Command'
+
+        '401':
+          description: Authentication required
+
+        '403':
+          description: Access denied
+
+        '404':
+          description: Command not found
+
 components:
 
   securitySchemes:
@@ -903,3 +1016,64 @@ components:
           type: string
           format: date-time
           example: 2026-09-25T12:05:00Z
+
+    CreateCommandRequest:
+      type: object
+      additionalProperties: false
+      required:
+        - commandType
+      properties:
+        commandType:
+          type: string
+          minLength: 1
+          maxLength: 50
+          example: set_power
+
+        parameters:
+          type: object
+          additionalProperties: true
+          example:
+            power: true
+
+    Command:
+      type: object
+      required:
+        - id
+        - deviceId
+        - userId
+        - commandType
+        - status
+        - createdAt
+      properties:
+        id:
+          type: string
+          format: uuid
+          example: d99a8fe8-44f8-43da-a150-1110a601c341
+
+        deviceId:
+          type: string
+          format: uuid
+          example: a2c9db02-4f45-4da8-9fd5-d97d01f50aa5
+
+        userId:
+          type: string
+          format: uuid
+          example: 550e8400-e29b-41d4-a716-446655440000
+
+        commandType:
+          type: string
+          maxLength: 50
+          example: set_power
+
+        status:
+          type: string
+          enum:
+            - pending
+            - completed
+            - failed
+          example: pending
+
+        createdAt:
+          type: string
+          format: date-time
+          example: 2026-09-25T12:10:00Z
