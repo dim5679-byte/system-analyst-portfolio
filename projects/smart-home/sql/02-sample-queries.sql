@@ -93,7 +93,19 @@ LEFT JOIN device_states ds
 WHERE d.id = :device_id;
 
 
--- 7. Получить пользователей, имеющих доступ к дому
+-- 7. Получить всех пользователей, имеющих доступ к дому
+
+SELECT
+    u.id,
+    u.email,
+    'owner' AS role,
+    h.created_at
+FROM homes h
+JOIN users u
+    ON u.id = h.owner_id
+WHERE h.id = :home_id
+
+UNION ALL
 
 SELECT
     u.id,
@@ -104,7 +116,8 @@ FROM home_members hm
 JOIN users u
     ON u.id = hm.user_id
 WHERE hm.home_id = :home_id
-ORDER BY hm.created_at;
+
+ORDER BY created_at;
 
 
 -- 8. Получить историю команд устройства
