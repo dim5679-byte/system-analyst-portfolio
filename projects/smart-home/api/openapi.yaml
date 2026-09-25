@@ -16,6 +16,9 @@ tags:
   - name: Homes
     description: Home management
 
+  - name: Rooms
+    description: Room management
+
 paths:
 
   /auth/register:
@@ -216,6 +219,169 @@ paths:
         '404':
           description: Home not found
 
+  /homes/{homeId}/rooms:
+    parameters:
+      - name: homeId
+        in: path
+        required: true
+        description: Home identifier
+        schema:
+          type: string
+          format: uuid
+
+    get:
+      tags:
+        - Rooms
+      summary: Get rooms of a home
+      operationId: getHomeRooms
+      security:
+        - bearerAuth: []
+
+      responses:
+        '200':
+          description: List of rooms
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Room'
+
+        '401':
+          description: Authentication required
+
+        '403':
+          description: Access denied
+
+        '404':
+          description: Home not found
+
+    post:
+      tags:
+        - Rooms
+      summary: Create room
+      operationId: createRoom
+      security:
+        - bearerAuth: []
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateRoomRequest'
+
+      responses:
+        '201':
+          description: Room created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Room'
+
+        '400':
+          description: Invalid request
+
+        '401':
+          description: Authentication required
+
+        '403':
+          description: Access denied
+
+        '404':
+          description: Home not found
+
+  /rooms/{roomId}:
+    parameters:
+      - name: roomId
+        in: path
+        required: true
+        description: Room identifier
+        schema:
+          type: string
+          format: uuid
+
+    get:
+      tags:
+        - Rooms
+      summary: Get room by ID
+      operationId: getRoom
+      security:
+        - bearerAuth: []
+
+      responses:
+        '200':
+          description: Room information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Room'
+
+        '401':
+          description: Authentication required
+
+        '403':
+          description: Access denied
+
+        '404':
+          description: Room not found
+
+    patch:
+      tags:
+        - Rooms
+      summary: Update room
+      operationId: updateRoom
+      security:
+        - bearerAuth: []
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateRoomRequest'
+
+      responses:
+        '200':
+          description: Room updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Room'
+
+        '400':
+          description: Invalid request
+
+        '401':
+          description: Authentication required
+
+        '403':
+          description: Access denied
+
+        '404':
+          description: Room not found
+
+    delete:
+      tags:
+        - Rooms
+      summary: Delete room
+      operationId: deleteRoom
+      security:
+        - bearerAuth: []
+
+      responses:
+        '204':
+          description: Room deleted successfully
+
+        '401':
+          description: Authentication required
+
+        '403':
+          description: Access denied
+
+        '404':
+          description: Room not found
+
 components:
 
   securitySchemes:
@@ -351,3 +517,60 @@ components:
           minLength: 1
           maxLength: 100
           example: Country House
+
+    Room:
+      type: object
+      required:
+        - id
+        - homeId
+        - name
+        - createdAt
+        - updatedAt
+      properties:
+        id:
+          type: string
+          format: uuid
+          example: 51e74da1-0fc4-47a6-8986-94a06f1ec5b4
+
+        homeId:
+          type: string
+          format: uuid
+          example: 550e8400-e29b-41d4-a716-446655440000
+
+        name:
+          type: string
+          maxLength: 100
+          example: Living Room
+
+        createdAt:
+          type: string
+          format: date-time
+          example: 2026-09-25T12:00:00Z
+
+        updatedAt:
+          type: string
+          format: date-time
+          example: 2026-09-25T12:00:00Z
+
+    CreateRoomRequest:
+      type: object
+      additionalProperties: false
+      required:
+        - name
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 100
+          example: Living Room
+
+    UpdateRoomRequest:
+      type: object
+      additionalProperties: false
+      minProperties: 1
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 100
+          example: Bedroom
