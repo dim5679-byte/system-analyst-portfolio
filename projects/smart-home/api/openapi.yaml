@@ -1,0 +1,139 @@
+openapi: 3.0.3
+
+info:
+  title: Smart Home Management Platform API
+  version: 1.0.0
+  description: REST API for Smart Home Management Platform.
+
+servers:
+  - url: https://api.smarthome.example.com
+    description: Production server
+
+tags:
+  - name: Auth
+    description: Registration and authentication
+
+paths:
+
+  /auth/register:
+    post:
+      tags:
+        - Auth
+      summary: Register user
+      operationId: registerUser
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterRequest'
+
+      responses:
+        '201':
+          description: User registered successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+
+        '400':
+          description: Invalid request
+
+        '409':
+          description: Email already exists
+
+  /auth/login:
+    post:
+      tags:
+        - Auth
+      summary: Authenticate user
+      operationId: loginUser
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+
+      responses:
+        '200':
+          description: Authentication successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+
+        '400':
+          description: Invalid request
+
+        '401':
+          description: Invalid email or password
+
+components:
+
+  schemas:
+
+    RegisterRequest:
+      type: object
+      required:
+        - email
+        - password
+      properties:
+        email:
+          type: string
+          format: email
+          example: user@example.com
+
+        password:
+          type: string
+          format: password
+          minLength: 8
+          example: StrongPassword123
+
+    LoginRequest:
+      type: object
+      required:
+        - email
+        - password
+      properties:
+        email:
+          type: string
+          format: email
+          example: user@example.com
+
+        password:
+          type: string
+          format: password
+          example: StrongPassword123
+
+    AuthResponse:
+      type: object
+      required:
+        - accessToken
+        - tokenType
+      properties:
+        accessToken:
+          type: string
+          example: eyJhbGciOiJIUzI1NiJ9...
+
+        tokenType:
+          type: string
+          example: Bearer
+
+        user:
+          $ref: '#/components/schemas/User'
+
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          example: 550e8400-e29b-41d4-a716-446655440000
+
+        email:
+          type: string
+          format: email
+          example: user@example.com
