@@ -1,0 +1,86 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.0.4 Chrome/138.0.7204.97 Electron/37.2.1 Safari/537.36" version="28.0.4">
+  <diagram id="smart-home-container" name="Page-1">
+    <mxGraphModel dx="1426" dy="841" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" background="#0d1117" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Smart Home Management Platform — Container Diagram" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontColor=#f0f6fc;labelBackgroundColor=none;labelBorderColor=none;fontSize=24;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="360" y="210" width="920" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="user" value="User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#161b22;strokeColor=#f0f6fc;fontColor=#f0f6fc;labelBackgroundColor=none;labelBorderColor=none;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="60" y="380" width="70" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="mobile" value="Mobile App&amp;#xa;&amp;#xa;Client application&amp;#xa;UI, JWT storage, REST client" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#161b22;strokeColor=#f0f6fc;fontColor=#f0f6fc;labelBackgroundColor=none;labelBorderColor=none;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="240" y="345" width="260" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="backend" value="Smart Home Backend&amp;#xa;&amp;#xa;REST API&amp;#xa;Authentication / JWT&amp;#xa;Business logic&amp;#xa;Command orchestration" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#161b22;strokeColor=#f0f6fc;fontColor=#f0f6fc;labelBackgroundColor=none;labelBorderColor=none;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="650" y="300" width="320" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="db" value="PostgreSQL&amp;#xa;&amp;#xa;Users&amp;#xa;Homes / Rooms&amp;#xa;Devices / States&amp;#xa;Commands" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#161b22;strokeColor=#f0f6fc;fontColor=#f0f6fc;labelBackgroundColor=none;labelBorderColor=none;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="705" y="680" width="210" height="165" as="geometry" />
+        </mxCell>
+        <mxCell id="gateway" value="IoT Gateway / Device Service&amp;#xa;&amp;#xa;Device communication&amp;#xa;Command delivery&amp;#xa;State / event exchange" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#161b22;strokeColor=#f0f6fc;fontColor=#f0f6fc;labelBackgroundColor=none;labelBorderColor=none;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="1170" y="335" width="300" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="devices" value="IoT Devices&amp;#xa;&amp;#xa;Bulbs&amp;#xa;Future smart devices" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#161b22;strokeColor=#f0f6fc;fontColor=#f0f6fc;labelBackgroundColor=none;labelBorderColor=none;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="1180" y="675" width="220" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="User actions" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#f0f6fc;fontColor=#f0f6fc;labelBackgroundColor=none;labelBorderColor=none;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" edge="1" target="mobile">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="130" y="440" as="sourcePoint" />
+            <mxPoint x="260" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" value="HTTPS / REST / JSON&lt;br&gt;&amp;nbsp;JWT Bearer Token" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#f0f6fc;fontColor=#f0f6fc;labelBackgroundColor=none;labelBorderColor=none;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" edge="1" source="mobile">
+          <mxGeometry x="-0.0769" y="20" relative="1" as="geometry">
+            <mxPoint x="520" y="420" as="sourcePoint" />
+            <mxPoint x="650" y="420" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" value="JSON responses / JWT" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#f0f6fc;fontColor=#f0f6fc;labelBackgroundColor=none;labelBorderColor=none;dashed=1;entryX=1.007;entryY=0.79;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.75;exitDx=0;exitDy=0;" parent="1" edge="1" target="mobile" source="backend">
+          <mxGeometry x="0.1719" y="-24" relative="1" as="geometry">
+            <mxPoint x="650" y="465" as="sourcePoint" />
+            <mxPoint x="520" y="465" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" value="SQL" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#f0f6fc;fontColor=#f0f6fc;labelBackgroundColor=none;labelBorderColor=none;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1" target="db">
+          <mxGeometry x="0.0336" y="16" relative="1" as="geometry">
+            <mxPoint x="810" y="540" as="sourcePoint" />
+            <mxPoint x="820" y="650" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" value="Internal API / commands" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#f0f6fc;fontColor=#f0f6fc;labelBackgroundColor=none;labelBorderColor=none;entryX=0.007;entryY=0.289;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1" target="gateway">
+          <mxGeometry x="-0.0025" y="10" relative="1" as="geometry">
+            <mxPoint x="970" y="390" as="sourcePoint" />
+            <mxPoint x="1110" y="390" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" value="Device protocol" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#f0f6fc;fontColor=#f0f6fc;labelBackgroundColor=none;labelBorderColor=none;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" edge="1" target="devices" source="gateway">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1330" y="560" as="sourcePoint" />
+            <mxPoint x="1330" y="675" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1320" y="640" />
+              <mxPoint x="1320" y="640" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e7" value="State / events" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#f0f6fc;fontColor=#f0f6fc;labelBackgroundColor=none;labelBorderColor=none;dashed=1;exitX=0.361;exitY=0.007;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" edge="1" source="devices">
+          <mxGeometry x="-0.2594" relative="1" as="geometry">
+            <mxPoint x="1230" y="640" as="sourcePoint" />
+            <mxPoint x="1260" y="525" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1260" y="675" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
