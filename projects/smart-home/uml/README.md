@@ -14,7 +14,7 @@
 |---|---|---|
 | [User Registration](./01-user-registration/README.md) | регистрация пользователя | Завершено |
 | [Add Device](./02-add-device/README.md) | подключение устройства | Завершено |
-| Device Control | управление устройством | Планируется |
+| [Device Control](./03-device-control/README.md) | управление устройством | Завершено |
 
 ---
 
