@@ -4,7 +4,7 @@
 
 В разделе представлена спецификация REST API для Smart Home Management Platform.
 
-API обеспечивает взаимодействие мобильного приложения с Backend и поддерживает основные сценарии системы: регистрацию и авторизацию пользователей, управление домами, комнатами и устройствами.
+API описывает взаимодействие клиентского приложения с Backend и поддерживает основные сценарии системы: регистрацию и авторизацию пользователей, управление домами, комнатами и устройствами, а также отправку команд устройствам.
 
 ---
 
@@ -12,50 +12,69 @@ API обеспечивает взаимодействие мобильного �
 
 - REST
 - JSON
-- OpenAPI 3.0
+- OpenAPI 3.0.3
 - HTTPS
+- JWT Bearer Authentication
 
 ---
 
-## Основные ресурсы
-
-- Authentication
-- Users
-- Homes
-- Rooms
-- Devices
-- Commands
-
----
-
-## Планируемые группы методов
+## Основные группы методов
 
 | Группа | Назначение |
 |---|---|
-| Auth | регистрация и авторизация пользователя |
+| Auth | регистрация и авторизация пользователей |
 | Homes | управление домами |
 | Rooms | управление комнатами |
 | Devices | подключение и управление устройствами |
-| Commands | отправка команд устройствам |
+| Commands | отправка команд и просмотр истории их выполнения |
 
 ---
 
-## Спецификация
+## Основные endpoints
 
-- [OpenAPI](./openapi.yaml)
+### Auth
+
+- `POST /auth/register` — регистрация пользователя
+- `POST /auth/login` — авторизация пользователя
+
+### Homes
+
+- `GET /homes` — получить доступные пользователю дома
+- `POST /homes` — создать дом
+- `GET /homes/{homeId}` — получить дом
+- `PATCH /homes/{homeId}` — изменить дом
+- `DELETE /homes/{homeId}` — удалить дом
+
+### Rooms
+
+- `GET /homes/{homeId}/rooms` — получить комнаты дома
+- `POST /homes/{homeId}/rooms` — создать комнату
+- `GET /rooms/{roomId}` — получить комнату
+- `PATCH /rooms/{roomId}` — изменить комнату
+- `DELETE /rooms/{roomId}` — удалить комнату
+
+### Devices
+
+- `GET /homes/{homeId}/devices` — получить устройства дома
+- `POST /homes/{homeId}/devices` — подключить устройство
+- `GET /devices/{deviceId}` — получить устройство
+- `PATCH /devices/{deviceId}` — изменить устройство
+- `DELETE /devices/{deviceId}` — удалить устройство
+- `GET /devices/{deviceId}/state` — получить текущее состояние устройства
+
+### Commands
+
+- `POST /devices/{deviceId}/commands` — отправить команду устройству
+- `GET /devices/{deviceId}/commands` — получить историю команд устройства
+- `GET /commands/{commandId}` — получить информацию о выполнении команды
 
 ---
 
-## Статус
+## Аутентификация
 
-В работе
+Для защищенных методов используется JWT Bearer Token.
 
----
+Токен возвращается после успешной регистрации или авторизации пользователя и передается в заголовке:
 
-## Связанные документы
-
-- [Functional Requirements](../requirements/05-functional-requirements/README.md)
-- [Use Cases](../requirements/08-use-cases/README.md)
-- [Business Rules](../requirements/09-business-rules/README.md)
-- [ERD](../erd/README.md)
-- [BPMN](../bpmn/README.md)
+```text
+Authorization: Bearer <access_token>
