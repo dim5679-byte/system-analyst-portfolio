@@ -1,24 +1,18 @@
-═══════════════════════════════════════
+# Дмитрий — Портфолио системного аналитика
 
-              Дмитрий
-      Портфолио системного аналитика
+**Москва · Открыт к предложениям**
 
-═══════════════════════════════════════
+Анализ требований · BPMN · UML · REST API · OpenAPI · SQL · ERD · System Architecture
 
-Москва
-Открыт к предложениям
-
-Анализ требований • BPMN • UML • REST API • SQL • ERD
-
-═══════════════════════════════════════
-
-**Русский** | [English](README.en.md)
+---
 
 ## Обо мне
 
-Системный аналитик, специализирующийся на анализе требований,
-проектировании информационных систем, моделировании процессов
-и разработке технической документации.
+Системный аналитик с практикой проектирования информационных систем и подготовки аналитической документации.
+
+В портфолио представлены требования, бизнес-процессы, модели данных, REST API, SQL, UML Sequence Diagrams и архитектурные решения.
+
+Основной проект демонстрирует полный цикл системного анализа: от определения требований и бизнес-правил до проектирования API, базы данных и взаимодействия компонентов системы.
 
 ---
 
@@ -26,45 +20,41 @@
 
 | Направление | Навыки |
 |---|---|
-| Требования | User Story, Use Case, функциональные и нефункциональные требования |
-| Бизнес-анализ | анализ процессов, бизнес-правила, работа со стейкхолдерами |
-| Моделирование | BPMN, UML, DFD, ERD |
-| API | REST API, OpenAPI, Swagger |
-| Данные | SQL, проектирование структуры БД, ERD |
-| Документация | ТЗ, спецификации, диаграммы, проектная документация |
+| Требования | Functional / Non-functional Requirements, User Stories, Use Cases, Business Rules |
+| Бизнес-процессы | BPMN 2.0, анализ и моделирование процессов |
+| UML | Sequence Diagrams, описание взаимодействия компонентов |
+| API | REST API, OpenAPI 3.0.3, JSON, HTTP status codes, JWT |
+| Данные | SQL, PostgreSQL, ERD, проектирование структуры БД |
+| Архитектура | Container Diagram, взаимодействие системных компонентов |
+| Инструменты | Draw.io, Git, GitHub, VS Code |
 
 ---
 
-## Лучшие проекты
+## Основной проект
 
-| Проект | Описание | Артефакты |
-|---|---|---|
-| [Smart Home](projects/smart-home) | система управления умным домом | Requirements, BPMN, API, ERD, SQL |
-| [Clinic Vita](projects/clinic-vita) | медицинская информационная система | BPMN, UML, Requirements, Wireframes |
-| [Internet Shop](projects/internet-shop) | система интернет-магазина | ERD, BPMN, SQL, API |
-| [Capsule Hotel](projects/capsule-hotel) | система управления капсульным отелем | Test Plan, User Guide, Requirements |
-| [Pet Insurance API](projects/pet-insurance) | API для сервиса страхования питомцев | OpenAPI, REST, JSON |
+### Smart Home Management Platform
 
----
+Портфельный проект системы управления умным домом.
 
-## Библиотека артефактов
+Проект охватывает основные задачи системного аналитика: требования, бизнес-процессы, модель данных, SQL, API, UML и архитектуру.
 
-| Раздел | Описание |
+| Артефакт | Содержание |
 |---|---|
-| [Requirements](artifacts/requirements) | требования, User Story, Use Case |
-| [BPMN](artifacts/bpmn) | модели бизнес-процессов |
-| [UML](artifacts/uml) | Sequence Diagram, State Machine и другие UML-диаграммы |
-| [ERD](artifacts/erd) | модели данных и связи сущностей |
-| [API](artifacts/api) | REST API и OpenAPI-спецификации |
-| [Architecture](artifacts/architecture) | C4, компонентные диаграммы, архитектурные решения |
-| [SQL](artifacts/sql) | SQL-запросы и примеры работы с данными |
-| [Wireframes](artifacts/wireframes) | прототипы интерфейсов и схемы экранов |
+| [Requirements](projects/smart-home/requirements/README.md) | Vision, Stakeholders, Scope, FR, NFR, User Stories, Use Cases, Business Rules |
+| [BPMN](projects/smart-home/bpmn/README.md) | User Registration, Add Device, Device Control |
+| [ERD](projects/smart-home/erd/README.md) | логическая модель данных Smart Home |
+| [SQL](projects/smart-home/sql/README.md) | PostgreSQL schema и примеры запросов |
+| [API](projects/smart-home/api/README.md) | REST API и OpenAPI 3.0.3 |
+| [UML](projects/smart-home/uml/README.md) | Sequence Diagrams ключевых сценариев |
+| [Architecture](projects/smart-home/architecture/README.md) | Container Diagram и описание компонентов |
+
+[Открыть проект Smart Home →](projects/smart-home/README.md)
 
 ---
 
 ## Как создавалось портфолио
 
-Это портфолио ведется как отдельный проект: с целью, дорожной картой, принципами оформления и историей изменений.
+Репозиторий развивается как отдельный проект с последовательным добавлением и улучшением аналитических артефактов.
 
 | Документ | Назначение |
 |---|---|
@@ -72,22 +62,11 @@
 | [Roadmap](docs/roadmap.md) | этапы развития |
 | [Portfolio Plan](docs/portfolio-plan.md) | структура и план наполнения |
 | [Design Principles](docs/design-principles.md) | правила структуры и документации |
-| [UI Guidelines](docs/ui-guidelines.md) | правила оформления |
 | [Changelog](docs/changelog.md) | история изменений |
-
----
-
-## Резюме
-
-Резюме будет добавлено позже.
 
 ---
 
 ## Контакты
 
-| Канал | Ссылка |
-|---|---|
-| GitHub | [dim5679-byte](https://github.com/dim5679-byte) |
-| Telegram | будет добавлено позже |
-| Email | будет добавлено позже |
-| HH | будет добавлено позже |
+- Telegram: [@Sobernaro](https://t.me/Sobernaro)
+- GitHub: [dim5679-byte](https://github.com/dim5679-byte)
