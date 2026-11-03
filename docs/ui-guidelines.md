@@ -1,80 +1,139 @@
-# UI Guidelines
+# Правила оформления документации
 
-This document defines the visual and structural rules for the System Analyst Portfolio.
+## Назначение
 
-## Purpose
+Документ определяет визуальные и структурные правила оформления портфолио системного аналитика.
 
-The portfolio should look like a professional product documentation, not just a file storage.
+Портфолио должно выглядеть как профессиональная проектная документация, а не как файловое хранилище.
 
-## General Style
+---
 
-- Minimalistic
-- Structured
-- Easy to scan
-- Consistent across all pages
-- Employer-oriented
+## Общий стиль
 
-## Page Structure
+Документация должна быть:
 
-Each main page should follow this logic:
+- минималистичной;
+- структурированной;
+- легко читаемой;
+- единообразной;
+- ориентированной на работодателя.
 
-1. Title
-2. Short description
-3. Navigation links
-4. Main content
-5. Related materials
+---
 
-## Typography
+## Структура страницы
 
-- Use one `# H1` heading per page.
-- Use `## H2` for main sections.
-- Use `### H3` for subsections.
-- Avoid long paragraphs.
-- Prefer short blocks of text.
+Основные документы рекомендуется оформлять в следующем порядке:
 
-## Tables
+1. заголовок;
+2. краткое описание;
+3. назначение документа;
+4. основное содержание;
+5. связанные материалы;
+6. статус.
 
-Use tables for structured information:
+---
 
-| Item | Description | Link |
+## Заголовки
+
+На одной странице используется:
+
+- один `# H1` — название документа;
+- `## H2` — основные разделы;
+- `### H3` — подразделы.
+
+Следует избегать слишком длинных текстовых блоков.
+
+Предпочтительны короткие абзацы и структурированные списки.
+
+---
+
+## Таблицы
+
+Таблицы используются для структурированных данных.
+
+Пример:
+
+| Элемент | Назначение | Ссылка |
 |---|---|---|
-| Example | Short explanation | View |
+| ERD | Модель данных | README |
+| API | OpenAPI спецификация | openapi.yaml |
+| SQL | Схема БД | 01-schema.sql |
 
-## Project Page Template
+---
 
-Each project should include:
+## Страница проекта
 
-1. Overview
-2. Business Context
-3. Goal
-4. My Role
-5. Tasks
-6. Solution
-7. Artifacts
-8. Result
-9. Lessons Learned
+README основного проекта должен содержать:
 
-## Artifact Page Template
+1. описание проекта;
+2. цель;
+3. основные сценарии;
+4. основные артефакты;
+5. используемые технологии;
+6. архитектуру;
+7. статус проекта.
 
-Each artifact page should include:
+---
 
-1. Purpose
-2. Context
-3. Artifact Preview
-4. Explanation
-5. Related Project
-6. Link to Source File
+## Страница артефакта
 
-## Images and Diagrams
+README отдельного артефакта рекомендуется строить по структуре:
 
-Each diagram should have:
+1. назначение;
+2. контекст;
+3. описание;
+4. превью;
+5. исходный файл;
+6. связанные документы;
+7. статус.
 
-- clear title;
-- short explanation;
-- readable resolution;
-- consistent naming.
+---
 
-Recommended file format:
+## Изображения и диаграммы
+
+Каждая диаграмма должна иметь:
+
+- понятное название;
+- краткое пояснение;
+- читаемое разрешение;
+- единый стиль;
+- редактируемый исходник.
+
+Рекомендуемый формат именования:
 
 ```text
 project-name_artifact-type_version.png
+```
+
+или для устойчивых конечных файлов:
+
+```text
+user-registration-sequence.png
+smart-home-container.png
+```
+
+---
+
+## Ссылки
+
+Для внутренних документов используются относительные ссылки.
+
+Пример:
+
+```markdown
+[API](../api/README.md)
+```
+
+Перед публикацией все ссылки необходимо проверить вручную.
+
+---
+
+## Статусы
+
+Используются единые значения:
+
+- `Планируется`;
+- `В работе`;
+- `Завершено`.
+
+Для опубликованной версии портфолио основные артефакты должны иметь статус `Завершено`.

@@ -1,33 +1,130 @@
-# Roadmap
+# План развития портфолио
 
-## v0.1 — Repository Setup
+## Этап 1 — Создание репозитория
 
-- Created GitHub repository
-- Added initial README
+Статус: **Завершено**
 
-## v0.2 — Portfolio Design
+- создан GitHub-репозиторий;
+- определена структура каталогов;
+- создан основной README;
+- настроена навигация по проекту.
 
-- Added Vision
-- Added Roadmap
-- Added Portfolio Plan
-- Added Design Principles
-- Added Changelog
+---
 
-## v0.3 — Main Page
+## Этап 2 — Требования
 
-- Improved README structure
-- Added navigation
-- Added project cards
+Статус: **Завершено**
 
-## v0.4 — Projects
+Подготовлены:
 
-- Added Smart Home
-- Added Clinic Vita
-- Added Internet Shop
-- Added Capsule Hotel
+- Vision;
+- Stakeholders;
+- Business Goals;
+- Scope;
+- Functional Requirements;
+- Non-functional Requirements;
+- User Stories;
+- Use Cases;
+- Business Rules;
+- Glossary.
 
-## v1.0 — Public Release
+---
 
-- Completed portfolio structure
-- Added core artifacts
-- Published GitHub Pages
+## Этап 3 — Моделирование процессов
+
+Статус: **Завершено**
+
+Подготовлены BPMN-модели:
+
+- User Registration;
+- Add Device;
+- Device Control.
+
+---
+
+## Этап 4 — Модель данных
+
+Статус: **Завершено**
+
+Подготовлены:
+
+- ERD v1;
+- ERD v2;
+- описание сущностей и связей;
+- первичные и внешние ключи.
+
+---
+
+## Этап 5 — SQL
+
+Статус: **Завершено**
+
+Подготовлены:
+
+- PostgreSQL schema;
+- ограничения целостности;
+- индексы;
+- внешние ключи;
+- примеры SQL-запросов.
+
+---
+
+## Этап 6 — REST API
+
+Статус: **Завершено**
+
+Подготовлена OpenAPI 3.0.3 спецификация для:
+
+- Auth;
+- Homes;
+- Rooms;
+- Devices;
+- Commands.
+
+---
+
+## Этап 7 — UML
+
+Статус: **Завершено**
+
+Подготовлены Sequence Diagrams:
+
+- User Registration;
+- Add Device;
+- Device Control.
+
+---
+
+## Этап 8 — Архитектура
+
+Статус: **Завершено**
+
+Подготовлены:
+
+- Container Diagram;
+- описание основных компонентов;
+- описание взаимодействия Mobile App, Backend, PostgreSQL, IoT Gateway и устройств.
+
+---
+
+## Этап 9 — Подготовка к поиску работы
+
+Статус: **Завершено**
+
+- обновлена главная страница портфолио;
+- настроена навигация;
+- удалены временные файлы;
+- унифицирована документация;
+- проект подготовлен для размещения ссылки в резюме.
+
+---
+
+## Дальнейшее развитие
+
+После начала откликов планируется:
+
+- добавить Wireframes;
+- расширить API-сценарии;
+- добавить пример асинхронной интеграции;
+- рассмотреть Kafka или RabbitMQ в отдельном кейсе;
+- добавить второй проект из другого бизнес-домена.
