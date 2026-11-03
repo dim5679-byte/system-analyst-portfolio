@@ -12,20 +12,22 @@
 
 | Диаграмма | Статус | Ссылка | Связанные документы |
 |---|---|---|---|
-| User Registration | В работе | [Открыть](./01-user-registration/README.md) | Functional Requirements, User Stories, Use Cases |
-| Add Device | В работе | [Открыть](./02-add-device/README.md) | Functional Requirements, User Stories, Use Cases, Business Rules |
-| Device Control | В работе | [Открыть](./03-device-control/README.md) | Functional Requirements, User Stories, Use Cases, Business Rules |
+| User Registration | Завершено | [Открыть](./01-user-registration/README.md) | Functional Requirements, User Stories, Use Cases |
+| Add Device | Завершено | [Открыть](./02-add-device/README.md) | Functional Requirements, User Stories, Use Cases, Business Rules |
+| Device Control | Завершено | [Открыть](./03-device-control/README.md) | Functional Requirements, User Stories, Use Cases, Business Rules |
 
 ---
 
-## План развития
+## Возможное развитие
 
-Планируется моделирование процессов:
+В дальнейшем могут быть дополнительно смоделированы процессы:
 
-- авторизация;
+- авторизация пользователя;
 - создание дома;
 - создание комнаты;
 - удаление устройства.
+
+Эти процессы не входят в обязательный набор артефактов первой версии портфолио.
 
 ---
 

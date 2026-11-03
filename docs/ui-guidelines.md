@@ -121,7 +121,7 @@ smart-home-container.png
 Пример:
 
 ```markdown
-[API](../api/README.md)
+`../api/README.md`
 ```
 
 Перед публикацией все ссылки необходимо проверить вручную.

@@ -35,7 +35,7 @@
 
 ## Статус
 
-В работе
+Завершено
 
 ---
 
@@ -49,14 +49,14 @@
 
 ## Диаграмма процесса
 
-![User Registration BPMN](./smart-home_bpmn_user-registration.png)
+![User Registration BPMN](./user-registration_v1.png)
 
 ---
 
 ## Файлы
 
-- [BPMN Diagram](./smart-home_bpmn_user-registration.drawio)
-- [PNG Preview](./smart-home_bpmn_user-registration.png)
+- [BPMN Diagram](./user-registration_v1.drawio)
+- [PNG Preview](./user-registration_v1.png)
 
 ---
 
